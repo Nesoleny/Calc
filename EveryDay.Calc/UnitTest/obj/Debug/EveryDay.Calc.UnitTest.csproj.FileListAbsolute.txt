@@ -1,0 +1,8 @@
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\bin\Debug\UnitTest.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\bin\Debug\UnitTest.pdb
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\bin\Debug\EveryDay.Calc.Calculation.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\bin\Debug\EveryDay.Calc.Calculation.pdb
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\obj\Debug\EveryDay.Calc.UnitTest.csprojResolveAssemblyReference.cache
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\obj\Debug\UnitTest.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\UnitTest\obj\Debug\UnitTest.pdb

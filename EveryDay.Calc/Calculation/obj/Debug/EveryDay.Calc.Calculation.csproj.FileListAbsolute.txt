@@ -1,0 +1,5 @@
+C:\education\Calc-Console-Test\EveryDay.Calc\Calculation\bin\Debug\EveryDay.Calc.Calculation.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\Calculation\bin\Debug\EveryDay.Calc.Calculation.pdb
+C:\education\Calc-Console-Test\EveryDay.Calc\Calculation\obj\Debug\EveryDay.Calc.Calculation.csprojResolveAssemblyReference.cache
+C:\education\Calc-Console-Test\EveryDay.Calc\Calculation\obj\Debug\EveryDay.Calc.Calculation.dll
+C:\education\Calc-Console-Test\EveryDay.Calc\Calculation\obj\Debug\EveryDay.Calc.Calculation.pdb
