@@ -1,5 +1,12 @@
 ﻿using EveryDay.Calc.Calculation;
+using EveryDay.Calc.Calculation.Interfaces;
+using EveryDay.Calc.Calculation.Models;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Reflection;
 using SConsole = System.Console;
+using System.IO;
 
 namespace EveryDay.Calc.Console
 {
@@ -7,66 +14,95 @@ namespace EveryDay.Calc.Console
     {
         static void Main(string[] args)
         {
-            var oper = args[0];
-            
-            var x = Str2Int(args[1]);
 
-            double y = 0;
+            IEnumerable<IOperation> operationList = LoadOperations();
             try
             {
-                y = Str2Int(args[2]);
+                do
+                {
+                    SConsole.Clear();
+                    showCalcDescription(operationList);
+                    showDialog(operationList);
+                }
+                while (SConsole.ReadKey().Key != ConsoleKey.Escape);
             }
-            catch {
-                SConsole.WriteLine("Не указано значени переменной y, по умолчанию 0");
+            catch (Exception ex)
+            {
+                SConsole.WriteLine(ex.Message);
+                SConsole.ReadKey();
             }
 
-            var calc = new Calculator();
+        }
 
-            double result = 0;
+        private static void showDialog(IEnumerable<IOperation> operationList)
+        {
+            //todo: обработки исключений
 
-            if (oper.ToLower() == "sum")
-            {
-                result = calc.Sum(x, y);
-            }
-            else if (oper.ToLower() == "div")
-            {
-                result = calc.Div(x, y);
-            }
-            else if (oper.ToLower() == "mult")
-            {
-                result = calc.mult(x, y);
-            }
-            else if (oper.ToLower() == "substr")
-            {
-                result = calc.Substr(x, y);
-            }
-            else if (oper.ToLower() == "sqr")
-            {
-                result = calc.sqr(x);
-            }
-            else if (oper.ToLower() == "sqrt")
-            {
-                result = calc.sqrt(x);
-            }
-            else
-            {
-                SConsole.WriteLine("Нет такой операции");
-            }
-            
+            SConsole.WriteLine("Введите имя команды");
+            string oper = SConsole.ReadLine();
+
+            SConsole.WriteLine("Введите первое число");
+            double x = Double.Parse(SConsole.ReadLine());
+
+            SConsole.WriteLine("Введите второе число");
+            double y = Double.Parse(SConsole.ReadLine());
+
+            var calc = new Calculator(operationList);
+
+            var result = calc.Calc(oper, new[] { x, y });
+
             SConsole.WriteLine(result.ToString());
 
-            SConsole.ReadKey();
+            SConsole.WriteLine("Операция выполнена успешно, для выполнения ещё одной нажмите любую клавишу, для завершения нажмите Esc");
+
         }
 
-
-        private static double Str2Int(string str)
+        private static void showCalcDescription(IEnumerable<IOperation>  operationList)
         {
-            double result;
-
-            if(!double.TryParse(str, out result)){
-                SConsole.WriteLine("Не удалось преобразовать \"{0}\" в число", str);
+            SConsole.WriteLine("Список доступных операций:");
+            foreach (var item in operationList)
+            {
+                SConsole.WriteLine(item.Description + " - " + item.Name);
             }
-            return result;
         }
+
+        private static IEnumerable<IOperation> LoadOperations()
+        {
+            var opers = new List<IOperation>();
+
+            var typeOperation = typeof(IOperation);
+
+            // найти все dll, которые находятся рядом с нашим exe
+            var dlls = Directory.GetFiles(Environment.CurrentDirectory, "*.dll");
+
+            // перебираем
+            foreach (var dll in dlls)
+            {
+                // загружаем сборку из файла
+                var assembly = Assembly.LoadFrom(dll);
+                // получаем типы/классы/интерфейсы из сброрки
+                var types = assembly.GetTypes();
+
+                // перебираем типы
+                foreach (var type in types)
+                {
+                    var interfaces = type.GetInterfaces();
+                    // если тип реализует наш интерфейс 
+                    if (interfaces.Contains(typeOperation))
+                    {
+                        // пытаемся создать экземпляр
+                        var instance = Activator.CreateInstance(type) as IOperation;
+                        if (instance != null)
+                        {
+                            // добавляем в список операций
+                            opers.Add(instance);
+                        }
+                    }
+                }
+            }
+
+            return opers;
+        }
+
     }
 }
