@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EveryDay.Calc.Console")]
+[assembly: AssemblyTitle("SuperPuperCalcLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EveryDay")]
-[assembly: AssemblyProduct("EveryDay.Calc.Console")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SuperPuperCalcLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9562dd3b-6b78-4128-a8df-93542b002bbb")]
+[assembly: Guid("701e67ee-f08f-42c4-b2a1-3184099c19f0")]
 
 // Version information for an assembly consists of the following four values:
 //

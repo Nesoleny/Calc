@@ -1,7 +1,7 @@
+C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\obj\Debug\EveryDay.Calc.Console.csprojResolveAssemblyReference.cache
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\bin\Debug\EveryDay.Calc.Console.exe
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\bin\Debug\EveryDay.Calc.Console.pdb
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\bin\Debug\EveryDay.Calc.Calculation.dll
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\bin\Debug\EveryDay.Calc.Calculation.pdb
-C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\obj\Debug\EveryDay.Calc.Console.csprojResolveAssemblyReference.cache
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\obj\Debug\EveryDay.Calc.Console.exe
 C:\education\Calc-Console-Test\EveryDay.Calc\EveryDay.Calc.Console\obj\Debug\EveryDay.Calc.Console.pdb
